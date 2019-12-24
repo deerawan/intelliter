@@ -1,0 +1,24 @@
+.git/
+.vscode/
+
+# for npm
+node_modules/
+npm-shrinkwrap.json
+
+# for https://github.com/Microsoft/TypeScript/issues/4667
+**/*.ts
+!**/*.d.ts
+
+# codes
+__test__/
+
+# misc
+.gitignore
+.prettierignore
+.prettierrc
+.editorconfig
+.travis.yml
+tsconfig.json
+tslint.json
+
+npm-debug.log
