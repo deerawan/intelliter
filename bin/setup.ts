@@ -3,6 +3,7 @@
 import * as process from 'process';
 import * as inquirer from 'inquirer';
 import * as ide from '../src/ide';
+import * as file from '../src/file';
 import * as dependency from '../src/dependency';
 
 const targetDir = process.cwd();
@@ -56,7 +57,10 @@ const targetDir = process.cwd();
   }
 
   console.log('🗂 saving configuration to .intelliterrc file');
-  ide.saveConfigurationFile(ideBinPath, codeStylePath, targetDir);
+  file.saveConfigFile(ideBinPath, codeStylePath, targetDir);
+
+  console.log('🗂 append .intelliterrc to .gitignore');
+  file.appendConfigFileToGitIgnore(targetDir);
 
   if (answers.precommit) {
     const packages = ['lint-staged', 'husky'];

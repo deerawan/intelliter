@@ -6,15 +6,6 @@ const possibleIDEBinPaths: any = {
   darwin: ['/Applications/WebStorm.app/Contents/bin'],
 };
 
-export async function saveConfigurationFile(
-  ideBinPath: string,
-  codeStylePath: string,
-  targetDir: string,
-) {
-  const content = JSON.stringify({ ideBinPath, codeStylePath }, null, 2);
-  fs.writeFileSync(targetDir + '/.intelliterrc', content);
-}
-
 /**
  * Get Intellij IDEA bin path depends on operating system
  */

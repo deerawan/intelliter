@@ -12,7 +12,7 @@ const copy = promisify(cpx.copy);
 const timeout = 25000;
 const currentDir = __dirname;
 const targetDir = `${currentDir}/execution`;
-const cliPath = `${currentDir}/../../src/setup.js`;
+const cliPath = `${currentDir}/../../bin/setup.js`;
 
 // NOTE: must set test folder as working directory
 process.chdir(targetDir);
@@ -37,11 +37,6 @@ describe('Configure Command', () => {
     console.log('inquirer result', result);
     packageFile = editJsonFile(`${targetDir}/package.json`);
   }, timeout);
-
-  test('add lint-staged to run in precommit', () => {
-    expect(packageFile.get('scripts.precommit')).toEqual('lint-staged');
-  });
-
   test('add lint-staged configuration file', () => {
     const lintStagedFile = fs.statSync(`${targetDir}/.lintstagedrc`);
     expect(lintStagedFile.isFile()).toEqual(true);
