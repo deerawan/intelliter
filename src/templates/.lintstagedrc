@@ -1,0 +1,3 @@
+{
+  "*.{ts,html,scss}": ["npm run format", "git add"],
+}
