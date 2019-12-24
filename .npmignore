@@ -1,13 +1,13 @@
-.git/
-.vscode/
+.git/**/*
+.vscode/**/*
 
 # for npm
 node_modules/
 npm-shrinkwrap.json
 
-# for https://github.com/Microsoft/TypeScript/issues/4667
 **/*.ts
 !**/*.d.ts
+**/*.js.map
 
 # codes
 __test__/
