@@ -2,7 +2,7 @@ import * as cpx from 'cpx';
 const editJsonFile = require('edit-json-file');
 const npmInstallPackage = require('npm-install-package');
 
-export function installDevPackages(packages: string[]) {
+export function installDevPackages(packages: string[], name: string) {
   return new Promise((resolve, reject) => {
     npmInstallPackage(
       packages,
